@@ -1,0 +1,84 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+ div.inner{
+  grid-gutter-width: 10px;
+  background-color:white;
+  opacity:0.8;
+  border-radius:50px;
+  border-style:solid;
+  border-color:black;
+  border-width: 5px;
+  height: 500px;
+  margin: 5px;
+  color:black;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .8);
+  h1, h3, img, p {
+    margin-left:10px;
+    marigin-right:10px;
+    opacity: initial;
+  }
+  p{
+    margin-top:10px;
+  }
+  img {
+    max-width:80%;
+    border-width:2px;
+    border-style:solid;
+    border-radius:15px;
+    border-color:black;
+
+  }
+ }
+ div.inner:hover{
+  background-color:lightgray;
+  text-decoration:none;
+ }
+
+
+div.inner2{
+  grid-gutter-width: 10px;
+  background-color:white;
+  opacity:0.8;
+  border-radius:50px;
+  border-style:solid;
+  border-color:black;
+  border-width: 5px;
+  height: 250px;
+  margin: 5px;
+    div.about-all-products{
+      text-align:center;
+      padding-right:50px;
+      padding-left:50px;
+    }
+ } 
+
+h1.all_product_page{
+  text-align: center;
+  opacity:initial;
+}
+h2.all_product_page{
+  text-align: center;
+  opacity:initial;
+}
+h4.all_product_page{
+  opacity:initial;
+}
+
+.inner_show{
+  background-color: white;
+  margin:20px;  
+  h1{
+
+  }
+  h2{
+
+  }
+  img {
+
+  }
+  p{
+
+  }
+}

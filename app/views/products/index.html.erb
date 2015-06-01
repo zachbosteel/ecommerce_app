@@ -1,0 +1,33 @@
+<div class="container-fluid full">
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+      <a href="/">
+        <img src="http://zachbosteel.com/wp-content/uploads/2015/05/purplehippologo.png">
+      </a>
+  </div>
+</div>
+<div class="all_product_page">
+  <div class="row inner2">
+    <h1 class="all_product_page col-md-12">Welcome to Purple Hippo</h1>
+    <div class="about-all-products">
+    <h4 class="all_product_page col-md-12">Welcome to Purple Hippo. We specialize in the weird, the wild, and the cryptozoological. We don't sell live animals. That would be illegal. But if you need food for your sea wyrm or a blanket for your bandersnoot, you've come to the right place.</h4>
+    </div>
+
+    <h2 class="all_product_page col-md-12">Browse our list of products below.</h2>
+    </div>
+    </div>
+<div class="row">
+    <% @product_library.each do |product| %>
+    <div class="product_all_page col-xs-12 col-sm-6 col-md-4">
+      <a href= <%= "/products/#{product.id}" %>>
+        <div class="inner">
+          <h1><%= product.name %></h1>
+          <h3><%= product.price %></h3>
+          <img src=<%= product.image %>>
+          <p><%= product.description %></p>
+        </div>
+      </a>
+    </div>
+    <% end %>
+</div>
+</div>
