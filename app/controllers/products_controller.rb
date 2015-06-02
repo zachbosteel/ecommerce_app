@@ -21,8 +21,9 @@ class ProductsController < ApplicationController
     @title = "Edit #{@product.name}"
   end
   def update
+    @id = params[:id]
     @product = Product.find_by(id: @id)
-    
-    redirect_to "/product/#{params[:id]}"
+    @product.update(params[:name], params[:price], params[:image], params[:description])
+    redirect_to "/product/#{@id}"
   end
 end
