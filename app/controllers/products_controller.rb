@@ -23,7 +23,13 @@ class ProductsController < ApplicationController
   def update
     @id = params[:id]
     @product = Product.find_by(id: @id)
-    @product.update(params[:name], params[:price], params[:image], params[:description])
-    redirect_to "/product/#{@id}"
+    @product.update(name: params[:name], price: params[:price], image: params[:image], description: params[:description])
+    redirect_to "/products/#{@id}"
+  end
+  def destroy
+    id = params[:id]
+    product = Product.find_by(id: id)
+    product.delete
+    redirect_to "/products/"
   end
 end
