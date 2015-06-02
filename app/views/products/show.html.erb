@@ -16,7 +16,7 @@
       <div class = "col-md-6 col-md-offset-3"><img src = <%= @product.image %> class = "inner_show"></div>
     </div>
     <div class = "row">
-      <div class = "col-md-6 col-md-offset-3"><p class = "inner_show"><%= @product.description %></p></div> 
+      <div class = "col-md-6 col-md-offset-3"><p class = "inner_show"><%= @product.description %><br><%= link_to "/products/#{@product.id}/edit" %></p></div> 
      </div>
   </div>
 </div>
