@@ -12,7 +12,7 @@
         <h1><%= @product.name %></h1>
         <h2><%= @product.price %></h2>
         <img src = <%= @product.image %>>
-        <p><%= @product.description %><br><br><%= link_to "Edit this product", "/products/#{@product.id}/edit" %></p> 
+        <p class="p1"><%= @product.description %><br><br><%= link_to "Edit this product", "/products/#{@product.id}/edit" %></p> 
         <p class = "p2"><%= link_to "Delete this product", "/products/#{@product.id}", method: :delete %></p>
         </div>
       </div>
