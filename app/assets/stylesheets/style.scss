@@ -1,10 +1,12 @@
+body{
+  font-family:Arial, Helvetica, sans-serif;
+}
+
 .navbar-fixed-top {
   height:55px;
   backgound-color:white;
   img[src="http://zachbosteel.com/wp-content/uploads/2015/05/purplehippologo.png"]{
-    float:left;
-    height: 40%;
-    width: 5%;
+    max-height:150%;
     
   }
   p{
@@ -15,4 +17,25 @@
 
 a:link{
   text-decoration: none;
+}
+
+p.flash{
+  text-align:center;
+  font-size: 20px;
+}
+
+.create-update-form{
+  background-color:white;
+  border-width:20px;
+  border-style:solid;
+  border-color:white;
+  border-radius:20px
+}
+
+label_tag {
+  float:left;
+}
+
+.create-update-text-field{
+  display:inline;
 }
