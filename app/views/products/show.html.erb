@@ -3,13 +3,16 @@
       <div class = "col-md-6 col-md-offset-3">
         <div class = "inner_show">
         <h1><%= @product.name %></h1>
-        <h3>Price: <%= @product.price %><br>
+        <h3>Price: <%= number_to_currency(@product.price) %><br>
         Tax: <%= number_to_currency(@product.tax) %><br>
         Total Cost: <%= number_to_currency(@product.total_price) %></h3>
         <%= image_tag @product.image, class: "img-responsive" %>
         <p class="p1">Updated at: <%= @product.strfs_up %></p>
         <div>
           <p class="p1"><%= @product.sale_message %></p>
+        </div>
+        <div>
+          <p class="p1"><%= @product.in_stock? %></p>
         </div>
         <p class="p1"><%= @product.description %><br><br><%= link_to "Edit this product", "/products/#{@product.id}/edit" %></p> 
         <p class = "p2"><%= link_to "Delete this product", "/products/#{@product.id}", method: :delete %></p>

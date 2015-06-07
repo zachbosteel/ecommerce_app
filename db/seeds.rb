@@ -1,7 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Product.create!([
+  {name: "Wyrm Food", price: "58.95", image: "https://celiackiddo.files.wordpress.com/2013/11/img_3072.jpg", description: "This food will keep your wyrm happy, healthy, and growing, without the urge to devour any local sailors.", in_stock: true},
+  {name: "Purple Hippo Plushie", price: "25.0", image: "http://www.studentsoftheworld.info/sites/society/img/23400_purple%20hippo.jpg", description: "This plush mascot is cuddly and soft, perfect for a child or baby, unlike most of our dangerous, animal-oriented products.", in_stock: true},
+  {name: "Bandersnatch Quilt", price: "42.95", image: "https://farm9.staticflickr.com/8603/16243656449_1f5c1534c6.jpg", description: "Though they may be dark and fearsome, bandersnatches also get cold! This quilt will keep your personal demon warm in the winter.", in_stock: true},
+  {name: "Unicorn Horn", price: "2495.9", image: "http://fc05.deviantart.net/fs70/f/2010/012/5/b/Unicorn_Horns_Made_Easy____by_Pirkleations.jpg", description: "Don't worry. This unicorn horn was sustainably harvested from a free-range magical equine. No unicorns were harmed in the making of this product.", in_stock: true},
+  {name: "Sasquatch Jerky", price: "5.99", image: "http://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/614/offlinehbpl.hbpl.co.uk/news/ORP/sasquatch_69461.jpg", description: "This jerky will soothe your save sasquatch. That's not a metaphor. It will make a savage sasquatch calm. It's for nothing else. Humans should not consume this.", in_stock: true},
+  {name: "Fairy Dust", price: "22.99", image: "https://classicallydiverted.files.wordpress.com/2013/08/fairy-dust.jpg", description: "If you've got the happy thoughts, we've got the dust! Just sprinkle a little over your head, remember Spring Break '03, and off you go. Warning: May cause metamorphosis into toad form for those not pure of heart.", in_stock: true},
+  {name: "THIS THING", price: "741.46", image: "http://oyster.ignimgs.com/wordpress/stg.ign.com/2015/04/90287-720x405.jpg", description: "IT'S A THING!", in_stock: true},
+  {name: "Man Body for Kraken", price: "2037.0", image: "http://fc04.deviantart.net/fs70/i/2014/036/7/1/cthulhu___guerra_de_mitos_by_hectorherrera-d756h7x.jpg", description: "Get your kraken up, out, and about, with this handy-dandy man body. Your kraken will look cool, strong, and beach-ready.", in_stock: true}
+])

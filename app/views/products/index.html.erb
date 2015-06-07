@@ -15,7 +15,7 @@
       <a href= <%= "/products/#{product.id}" %>>
         <div class="inner">
           <h1><%= product.name %></h1>
-          <h3><%= product.price %></h3>
+          <h3><%= number_to_currency(product.price) %></h3>
           <%= image_tag product.image, class: "img-responsive center-block" %>
           <p><%= product.description %></p>
         </div>

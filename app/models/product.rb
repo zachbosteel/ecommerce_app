@@ -4,8 +4,7 @@ class Product < ActiveRecord::Base
   end
   def sale_message
     sale_price = price
-    sale_price.slice! "$"
-    if sale_price.to_i < 20
+    if sale_price < 20
       message = "<div class=\"alert alert-danger\" role=\"alert\">Discount item!</div>"
     else
       message = "<div class=\"alert alert-danger\" role=\"alert\">On sale!</div>"
@@ -14,15 +13,19 @@ class Product < ActiveRecord::Base
   end
   def tax
     @before_tax = price
-    @before_tax.slice! "$"
-    if @before_tax.include? ","
-      @before_tax.slice! ","
-    end
-    @tax = @before_tax.to_f * 0.09
+    @tax = @before_tax * 0.09
     @tax
   end
   def total_price
-    total_price = @before_tax.to_f + @tax
+    total_price = @before_tax + @tax
     total_price
+  end
+  def in_stock?
+    if in_stock 
+      message2 = "<div class=\"alert alert-success\" role=\"alert\">Currently in stock.</div>"
+    else in_stock
+      message2 = "<div class=\"alert alert-warning\" role=\"alert\">Currently out of stock.</div>"
+    end
+    message2.html_safe
   end
 end

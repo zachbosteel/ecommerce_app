@@ -44,3 +44,5 @@ group :development, :test do
 end
 
 gem 'bootstrap-sass', '~> 3.3.3'
+
+gem 'seed_dump'
