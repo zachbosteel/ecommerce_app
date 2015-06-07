@@ -1,18 +1,19 @@
 class ProductsController < ApplicationController
   def index
     @title = "Purple Hippo"
-    @product_library = Product.all
-    if params[:sort]
-      @product_library = Product.order(params[:sort])
-    end  
-    if params[:sort] and params[:order]
-      @product_library = Product.order(price: :desc)
+    @product_library = Product.all 
+    if params[:sort] 
+      if params[:sort] and params[:order]
+        @product_library = @product_library.order(params[:sort] => params[:order])
+      else
+        @product_library = @product_library.order(params[:sort])
+      end
     end
     if params[:discount]
-      @product_library = Product.where('price <= ?', 25)
+      @product_library = @product_library.where('price <= ?', 25)
     end
     if params[:search]
-      @product_library = Product.where('name LIKE ?', "%#{params[:search]}%")
+      @product_library = @product_library.where('name LIKE ? OR description LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%")
     end
   end
   def show

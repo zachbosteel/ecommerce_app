@@ -28,9 +28,9 @@
       </ul>
       <%= form_tag "/products", method: :get, class: "navbar-form navbar-right", role: "search" do%>
         <div class="form-group">
-          <%= text_field_tag :search, "Search", class: "form_control" %>
+          <%= text_field_tag :search, nil, placeholder: 'Search', class: "form_control" %>
         </div>
-        <%= submit_tag "Submit", class: "btn btn-default", type: "submit" %> 
+        <%= submit_tag "Search", class: "btn btn-default", type: "submit" %> 
       <%end%>  
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/products?discount=20">Discount Products</a></li>
@@ -38,7 +38,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sort Products <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="/products?sort=price">Sort by Price - Lowest to Highest</a></li>
+            <li><a href="/products?sort=price&order=asc">Sort by Price - Lowest to Highest</a></li>
             <li><a href="/products?sort=price&order=desc">Sort by Price - Highest to Lowest</a></li>
             <li><a href="/products?sort=name">Sort by Name</a></li>
             <li><a href="/products?sort=in_stock">Sort by In Stock</a></li>
