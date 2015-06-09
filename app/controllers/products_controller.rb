@@ -49,4 +49,15 @@ class ProductsController < ApplicationController
     flash[:warning] = "Product deleted."
     redirect_to "/products/"
   end
+  def new_image
+    @title = "Add a New Product Image"
+    @id = params[:id]
+    @product = Product.find_by(id: @id)
+  end
+  def create_image
+    @id = params[:id]
+    @product = Image.create(url: params[:image_url], product_id: @id)
+    flash[:success] = "Product image added."
+    redirect_to "/products/#{@id}"
+  end
 end

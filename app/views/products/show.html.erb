@@ -16,10 +16,17 @@
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <% @images.each do |image|%>
-    <div class="item active">
-    <%= image_tag image.url %>
+    <div class = "item active">
+    <%= image_tag @images.first.url %>
     </div>
+    <% @images.each do |image|%>
+    <%  if image == @images[0]
+        next
+      else %>
+        <div class="item">
+        <%= image_tag image.url %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 

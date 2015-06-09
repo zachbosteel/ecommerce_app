@@ -1,0 +1,14 @@
+<div class ="container-fluid">
+  <div class= "col-md-4 col-md-offset-4">
+    <h1 class="inner_show form_title">Add New Product Image</h1>
+  </div>
+  <div class= "col-md-4 col-md-offset-4">
+    <%= form_tag "/products/#{@product.id}", method: :post, class: "create-update-form" do %>
+    <div>
+      <%= label_tag :image_url %>
+      <%= text_field_tag :image_url, nil, class: "create-update-text-field" %>
+    </div>
+    <%= submit_tag "Add Image" %>
+    <% end %>
+  </div>
+</div>
