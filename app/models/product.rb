@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  belongs_to :supplier
   def strfs_up
     updated_at.strftime("%B %d, %Y")
   end
