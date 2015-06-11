@@ -24,7 +24,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/products/new"> Create New Product <span class="sr-only">(current)</span></a></li>
+        <li class="active"><%= link_to "Create New Product", "/products/new" if current_user %><span class="sr-only">(current)</span></li>     
       </ul>
       <%= form_tag "/products", method: :get, class: "navbar-form navbar-right", role: "search" do%>
         <div class="form-group">
@@ -33,6 +33,9 @@
         <%= submit_tag "Search", class: "btn btn-default", type: "submit" %> 
       <%end%>  
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Sign Out", "/users/sign_out", method: :delete if current_user %></li> 
+        <li><%= link_to "Sign Up", "/users/sign_up" if not current_user %></li> 
+        <li><%= link_to "Sign In", "/users/sign_in" if not current_user %></li>
         <li><a href="/products?discount=20">Discount Products</a></li>
         <li><a href= <%="/products/#{Product.all.sample.id}"%>>Random Product</a></li>
         <li class="dropdown">

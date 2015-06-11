@@ -47,10 +47,26 @@
         <div>
           <p class="p1"><%= @product.in_stock? %></p>
         </div>
-        <p class="p1"><%= @product.description %><br>Supplier: <%= @product.supplier.supplier_name %><br><br><%= link_to "Edit this product", "/products/#{@product.id}/edit" %></p> 
-        <p class = "p2"><%= link_to "Delete this product", "/products/#{@product.id}", method: :delete %></p>
+        <p class="p1"><%= @product.description %><br>Supplier: <%= @product.supplier.supplier_name %><br><br><%= link_to "Edit this product", "/products/#{@product.id}/edit" if current_user %></p> 
+        <p class = "p2"><%= link_to "Add image to this product", "/products/#{@product.id}/new_image" if current_user %></p><br>
+        <p class = "p2"><%= link_to "Delete this product", "/products/#{@product.id}", method: :delete if current_user %></p>
         </div>
       </div>
     </div>
   </div>
+  <% if current_user %>
+  <div class="row">
+    <div class = "col-md-6 col-md-offset-3">
+      <div class = "inner_show">
+      <%= form_tag "/orders?productid=#{@product.id}", method: :post do %>
+        <div>
+          <%= label_tag :quantity %>
+          <%= text_field_tag :quantity %>
+        </div>
+        <%= submit_tag "Buy This Product Now" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+  <%end%>
 </div>

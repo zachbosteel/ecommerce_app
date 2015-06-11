@@ -46,3 +46,5 @@ end
 gem 'bootstrap-sass', '~> 3.3.3'
 
 gem 'seed_dump'
+
+gem 'devise', '~> 3.4.1'
