@@ -10,7 +10,7 @@
     </div>
     </div>
 <div class="row">
-    <% @product_library.each do |product| %>
+    <% @product_library.each do |product| if @product_library %>
     <div class="product_all_page col-xs-12 col-sm-6 col-md-4">
       <a href= <%= "/products/#{product.id}" %>>
         <div class="inner">
