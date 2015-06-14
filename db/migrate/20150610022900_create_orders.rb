@@ -4,9 +4,9 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :user_id
       t.integer :product_id
       t.integer :quantity
-      t.decimal :total_price, 10, 2
-      t.decimal :subtotal_price, 10, 2
-      t.decimal :tax, 10, 2
+      t.integer :total_price
+      t.integer :subtotal_price
+      t.integer :tax
 
       t.timestamps null: false
     end
