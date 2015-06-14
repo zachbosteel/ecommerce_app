@@ -48,3 +48,6 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'seed_dump'
 
 gem 'devise', '~> 3.4.1'
+
+gem 'pg', group: :production
+gem 'rails_12factor', group: :production
