@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @title = "Purple Hippo"
-    @product_library = Product.all 
+    @product_library = Product.all if Product
     if params[:sort] 
       if params[:sort] and params[:order]
         @product_library = @product_library.order(params[:sort] => params[:order])
