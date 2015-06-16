@@ -1,0 +1,13 @@
+<div class="container-fluid full">
+  <div class = "row">
+    <div class = "col-md-6 col-md-offset-3">
+      <div class = "inner_show">
+      <% @carted_products.each do |carted_product| %>
+      <h5><%= carted_product.product.name %></h5>
+      <h5><%= carted_product.product.price %></h5>
+      <h5><%= carted_product.quantity %></h5>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
