@@ -7,16 +7,22 @@ class Order < ActiveRecord::Base
     created_at.strftime("%A, %d %b %Y %l:%M %p")
   end
   def calc_subtotal_price 
-    @temp_subtotal_price = product.price * quantity
+    subtotal = 0
+    carted_products.each do |carted_product|
+      item_price = carted_product.product.price * carted_product.quantity
+      subtotal += item_price
+    end
+    subtotal
   end
   def calc_tax
-    @temp_tax = (product.price * TAX) * quantity
+    tax = 0
+    carted_products.each do |carted_product|
+      item_tax = (carted_product.product.price * TAX) * carted_product.quantity
+      tax += item_tax
+    end
+    tax
   end
   def calc_total_price 
-    if subtotal_price && tax
-      subtotal_price + tax
-    else
-      @temp_subtotal_price + @temp_tax 
-    end
+    subtotal_price + tax
   end
 end

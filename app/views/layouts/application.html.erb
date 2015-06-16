@@ -24,7 +24,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "Create New Product", "/products/new" if current_user %><span class="sr-only">(current)</span></li>     
+        <li class="active"><%= link_to "Create New Product", "/products/new" if current_user %><span class="sr-only">(current)</span></li>
+        <% if current_user %>
+        <li><a href="/shopping_cart"><span class="glyphicon glyphicon-shopping-cart" ></span></a></li>
+        <%end %>     
       </ul>
       <%= form_tag "/products", method: :get, class: "navbar-form navbar-right", role: "search" do%>
         <div class="form-group">

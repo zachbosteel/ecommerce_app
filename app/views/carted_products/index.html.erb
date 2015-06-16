@@ -7,6 +7,9 @@
       <h5><%= carted_product.product.price %></h5>
       <h5><%= carted_product.quantity %></h5>
       <% end %>
+      <%= form_tag "/orders", method: :post do%>
+        <%= submit_tag "Buy Now!" %>
+      <% end %>
       </div>
     </div>
   </div>

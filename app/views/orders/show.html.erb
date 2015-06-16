@@ -6,12 +6,31 @@
           <h3>
             <%= "Ordered by #{@order.user.email}" %><br>
             <%= "Order ID: #{@order.id}" %><br>
-            <%= @order.product.name + " " + "Quantity: #{@order.quantity}" %><br>
-            <%= "Order total: " + number_to_currency(@order.subtotal_price) %><br>
+            Order Details:<br>
+          </h3>
+            <h4>  
+            <table class="product_list">
+              <tr>
+                <td><strong>Product</strong></td>
+                <td><strong>Price</strong></td>
+                <td><strong>Quantity</strong></td>
+              </tr>
+            <% @order.carted_products.each do |carted_product| %>
+              <tr>
+                <td><%= "#{carted_product.product.name}" %> </td>
+                <td><%= "#{number_to_currency(carted_product.product.price)}" %> </td>
+                <td><%= "#{carted_product.quantity}" %> </td>
+              </tr> 
+              <% end %>
+            </table>
+            </h4>
+          <h3>
+            <%= "Order subtotal: " + number_to_currency(@order.subtotal_price) %><br>
             <%= "Tax: " + number_to_currency(@order.tax) %><br>
-            <%= "Total order price: " + number_to_currency(@order.total_price) %><br>
+            <%= "Order total: " + number_to_currency(@order.total_price) %><br>
             <%= "Order submitted at: #{@order.strfs_up}" %><br>
-          </h3>  
+          </h3>
+          <p><%= link_to "Proceed to Checkout", "/check_out?order_id=#{@order.id}"%></p>  
       </div>
     </div>
   </div>
