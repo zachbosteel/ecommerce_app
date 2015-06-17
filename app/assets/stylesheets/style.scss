@@ -4,7 +4,7 @@ body{
 
 .navbar-fixed-top {
   height:55px;
-  backgound-color:white;
+  background-color:white;
   img[src="http://zachbosteel.com/wp-content/uploads/2015/05/purplehippologo.png"]{
     max-height:150%;
     
@@ -24,6 +24,11 @@ p.flash{
   font-size: 20px;
 }
 
+
+.alert-notice, .alert-success, .alert-warning{
+  background-color:#D9C3C7;
+}
+
 .create-update-form{
   background-color:white;
   border-width:20px;
@@ -32,10 +37,14 @@ p.flash{
   border-radius:20px
 }
 
-label_tag {
-  float:left;
-}
-
 .create-update-text-field{
   display:inline;
+}
+
+.glyphicon-shopping-cart{
+  padding:5px;
+  border-width:2px;
+  border-color:black;
+  border-style:solid;
+  border-radius:20px;
 }

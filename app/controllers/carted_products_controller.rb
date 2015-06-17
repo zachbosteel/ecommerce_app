@@ -13,20 +13,10 @@ class CartedProductsController < ApplicationController
       redirect_to "/products"
     end
   end
-  def edit
-    @order_id = params[:order_id]
-    @carted_products = CartedProduct.where(order_id: @order_id, status: "Purchased")
-    if not current_user
-      redirect_to "/products"
-    end
-    if @carted_products == []
-      redirect_to "/products"
-    end
-  end
   def destroy
     @id = params[:id]
     carted_product = CartedProduct.find_by(id: @id)
     carted_product.update(status: "Removed")
-    redirect_to "/check_out?order_id=#{carted_product.order_id}"
+    redirect_to "/shopping_cart"
   end
 end

@@ -2,11 +2,24 @@
   <div class = "row">
     <div class = "col-md-6 col-md-offset-3">
       <div class = "inner_show">
-      <% @carted_products.each do |carted_product| %>
-      <h5><%= carted_product.product.name %></h5>
-      <h5><%= carted_product.product.price %></h5>
-      <h5><%= carted_product.quantity %></h5>
-      <% end %>
+      <h1><span class="glyphicon glyphicon-shopping-cart" ></span>
+      Shopping Cart</h1>
+      <table class="product_list">
+        <tr>
+        <td><strong>Product</strong></td>
+        <td><strong>Price</strong></td>
+        <td><strong>Quantity</strong></td>
+        <td><strong>Remove</strong></td>
+        </tr>
+        <% @carted_products.each do |carted_product| %>
+          <tr>
+          <td><%= carted_product.product.name %></td>
+          <td><%= number_to_currency(carted_product.product.price) %></td>
+          <td><%= carted_product.quantity %></td>
+          <td><button type="button"><%= link_to "Remove", "carted_products/#{carted_product.id}", method: :delete %></td>
+          </tr>
+        <% end %>
+      </table>
       <%= form_tag "/orders", method: :post do%>
         <%= submit_tag "Buy Now!" %>
       <% end %>

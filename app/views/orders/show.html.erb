@@ -2,7 +2,7 @@
   <div class="row">
     <div class = "col-md-6 col-md-offset-3">
       <div class = "inner_show">
-        <h1>Please review your order below.</h1>
+        <h1 class="shopping_cart">Please review your order below.</h1>
           <h3>
             <%= "Ordered by #{@order.user.email}" %><br>
             <%= "Order ID: #{@order.id}" %><br>
@@ -30,7 +30,6 @@
             <%= "Order total: " + number_to_currency(@order.total_price) %><br>
             <%= "Order submitted at: #{@order.strfs_up}" %><br>
           </h3>
-          <p><%= link_to "Proceed to Checkout", "/check_out?order_id=#{@order.id}"%></p>  
       </div>
     </div>
   </div>
